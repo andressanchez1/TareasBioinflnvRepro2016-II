@@ -1,9 +1,24 @@
-####################################################
+#################################################################
+# Dockerfile
+#
+# Version:          1
+# Software:         BioDocker base Image
+# Software Version: 20150814
+# Description:      Basic image for BioDocker
+# Website:          http://biodocker.org/
+# Tags:             Genomics|Proteomics|Transcriptomics|General|Metabolomics
+# Provides:         autotools-dev|automake|cmake|curl|fuse|git|wget|zip|openjdk-7-jre|build-essential|pkg-config|python|python-dev|python-pip|zlib1g-dev
+# Base Image:       FastXTools
+# Build Cmd:        docker build --rm -t biodckr/biodocker .
+# Pull Cmd:         docker pull biodckr/biodocker
+# Run Cmd:          docker run --rm biodckr/biodocker bash
+#################################################################
 # Dockerfile 
 # Este dockerfile instala FastXtools a partir de la imagen biodckr/biodocker/
 #Abrir terminal desde Docker Quick Terminal
 # docker images
 # docker pull biodckr/biodocker
+#FROM biodckr/biodocker
 # docker run -it biodckr/biodocker /bin/bash
 #contraseña : biodocker
 #Ir al link http://hannonlab.cshl.edu/fastx_toolkit/download.html desde algun navegador para descargar FastXtools.
@@ -22,10 +37,11 @@
 #tar -xvf fastx_toolkit-0.0.14.tar.bz2
 
 # cd fastx_toolkit-0.0.14 
-#$ ./configure
-#$ make
-#$ sudo make install
-
+# ./configure
+# make
+# sudo make install
+# cd ..
+# rm -rf fas* lib*
 ##Fin##
 ##ßy Andrés Sánchez##
 
