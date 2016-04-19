@@ -18,7 +18,6 @@
 #Abrir terminal desde Docker Quick Terminal
 # docker images
 # docker pull biodckr/biodocker
-#FROM biodckr/biodocker
 # docker run -it biodckr/biodocker /bin/bash
 #contraseña : biodocker
 #Ir al link http://hannonlab.cshl.edu/fastx_toolkit/download.html desde algun navegador para descargar FastXtools.
