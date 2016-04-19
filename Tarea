@@ -7,7 +7,7 @@
 # docker run -it biodckr/biodocker /bin/bash
 #contraseña : biodocker
 #Ir al link http://hannonlab.cshl.edu/fastx_toolkit/download.html desde algun navegador para descargar FastXtools.
-# descargar el archivo  libtextutils y fastx_toolkit-0.0.14.tar.bz2 para despues descomprimirlos. Esto en la carpeta /Users/usuario/Desktop/BioinfInvRepro2016-II-master-2/Practicas/Uni5/DatosContenedor1/datos
+# descargar el archivo  libtextutils.tar.bz y fastx_toolkit-0.0.14.tar.bz2 para despues descomprimirlos. Esto en la carpeta /Users/usuario/Desktop/BioinfInvRepro2016-II-master-2/Practicas/Uni5/DatosContenedor1/datos
 
 #wget https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz
 
