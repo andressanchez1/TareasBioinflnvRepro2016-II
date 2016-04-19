@@ -12,22 +12,22 @@
 #wget https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz
 
 #tar –xvf libgtextutils-0.7 2.tar.bz
-cd libgtextutils-0.7
-./configure
-make
-sudo make install
+# cd libgtextutils-0.7
+# ./configure
+# make
+# sudo make install
 
-cd ..
+# cd ..
 #wget https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/fastx_toolkit-0.0.14.tar.bz2
 #tar -xvf fastx_toolkit-0.0.14.tar.bz2
 
-cd fastx_toolkit-0.0.14 
+# cd fastx_toolkit-0.0.14 
 #$ ./configure
 #$ make
 #$ sudo make install
 
-
-
+##Fin##
+##ßy Andrés Sánchez##
 
  
 
