@@ -45,7 +45,3 @@ WORKDIR /data/
 MAINTAINER Andres Sanchez <guitox@msn.com> 
 
 #  Para correr se usa docker build -t biodckrdev/fastx_toolkit .
-
-
-
-
