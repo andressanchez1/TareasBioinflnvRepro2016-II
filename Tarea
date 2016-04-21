@@ -1,50 +1,46 @@
 #################################################################
 # Dockerfile
 #
-# Version:          1
-# Software:         BioDocker base Image
+# Version:          14
+# Software:         Fastx_toolkit
 # Software Version: 20150814
-# Description:      Basic image for BioDocker
-# Website:          http://biodocker.org/
-# Tags:             Genomics|Proteomics|Transcriptomics|General|Metabolomics
-# Provides:         autotools-dev|automake|cmake|curl|fuse|git|wget|zip|openjdk-7-jre|build-essential|pkg-config|python|python-dev|python-pip|zlib1g-dev
-# Base Image:       FastXTools
-# Build Cmd:        docker build --rm -t biodckr/biodocker .
-# Pull Cmd:         docker pull biodckr/biodocker
-# Run Cmd:          docker run --rm biodckr/biodocker bash
+# Description:      ver manual en linea
+# Website:          http://hannonlab.cshl.edu/fastx_toolkit/
+# Tags:             Next Generation Sequencing
+# Provides:         FastXTools 0.0.14
+# Base Image:       biodckr/biodocker
+# Build Cmd:        docker build -t biodckrdev/fastx_toolkit:0.014
+# Pull Cmd:         docker pull biodckrev/fastx_toolkit
+# Run Cmd:          docker run -it biodckrdev/fastx_toolkit
 #################################################################
 # Dockerfile 
+#set the base image to Ubuntu
+FROM biodckr/biodocker
 # Este dockerfile instala FastXtools a partir de la imagen biodckr/biodocker/
-#Abrir terminal desde Docker Quick Terminal
-# docker images
-# docker pull biodckr/biodocker
-# docker run -it biodckr/biodocker /bin/bash
-#contraseña : biodocker
-#Ir al link http://hannonlab.cshl.edu/fastx_toolkit/download.html desde algun navegador para descargar FastXtools.
-# descargar el archivo  libtextutils.tar.bz y fastx_toolkit-0.0.14.tar.bz2 para despues descomprimirlos. Esto en la carpeta /Users/usuario/Desktop/BioinfInvRepro2016-II-master-2/Practicas/Uni5/DatosContenedor1/datos
+#####Begin instalation####
+#change user to root
+USER root
 
-#wget https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz
+RUN wget https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz && \
+tar –xvf libgtextutils-0.7 2.tar.bz && \
+cd libgtextutils-0.7 && \
+./configure && \
+make && \
+sudo make install && \
+cd .. && \
+wget https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/fastx_toolkit-0.0.14.tar.bz2 && \
+tar -xvf fastx_toolkit-0.0.14.tar.bz2 && \
+cd fastx_toolkit-0.0.14  && \
+./configure && \
+make && \
+sudo make install && \
+cd .. && \
+rm -rf fas* lib* && \
 
-#tar –xvf libgtextutils-0.7 2.tar.bz
-# cd libgtextutils-0.7
-# ./configure
-# make
-# sudo make install
-
-# cd ..
-#wget https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/fastx_toolkit-0.0.14.tar.bz2
-#tar -xvf fastx_toolkit-0.0.14.tar.bz2
-
-# cd fastx_toolkit-0.0.14 
-# ./configure
-# make
-# sudo make install
-# cd ..
-# rm -rf fas* lib*
-##Fin##
-##ßy Andrés Sánchez##
-
- 
-
-
+#change user back to biodocker
+USER biodocker
+#change work dir to /DATA
+WORKDIR /data/
+###### final installation###
+MAINTAINER Andres Sanchez <GUITOX@MSN.COM> 
 
