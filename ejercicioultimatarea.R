@@ -1,3 +1,7 @@
+#utilice VEGAN para jugar con datos y graficar datos
+library(vegan)
+library(MASS)
+
 data(BCI)
 mod <- decorana(BCI)
 plot(mod)
